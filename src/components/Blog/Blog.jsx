@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { BiBookmark } from "react-icons/bi";
 const Blog = ({ blog, handleBookMarks, handleReadingTimes }) => {
   const {
+    id,
     cover,
     title,
     author,
@@ -41,7 +42,7 @@ const Blog = ({ blog, handleBookMarks, handleReadingTimes }) => {
         {
           hashtags.map((hash, idx)=> <p key={idx}># {hash}</p>)
         }</div>
-      <button onClick={()=>handleReadingTimes(reading_time)} className="mt-6 text-[#6047EC] text-xl font-semibold underline">Mark as read</button>
+      <button onClick={()=>handleReadingTimes(reading_time, id)} className="mt-6 text-[#6047EC] text-xl font-semibold underline">Mark as read</button>
     </div>
   );
 };

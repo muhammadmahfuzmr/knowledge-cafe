@@ -14,10 +14,13 @@ function App() {
   
     
   };
-  const handleReadingTimes = (times)=>{
+  const handleReadingTimes = (times, id)=>{
     // console.log('added reading times')
     setReadingTimes(readingTimes + times)
     // console.log(times)
+    // remove books from bookmarks
+    const remainingBookMarks = bookMarks.filter(bookMark=> bookMark.id !== id)
+    setBookMarks(remainingBookMarks)
   }
   // console.log(bookMarks)
   return (

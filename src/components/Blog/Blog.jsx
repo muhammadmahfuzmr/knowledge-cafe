@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { BiBookmark } from "react-icons/bi";
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleBookMarks, handleReadingTimes }) => {
   const {
     cover,
     title,
@@ -31,9 +31,9 @@ const Blog = ({ blog }) => {
           <p className="text-[#11111199] font-medium text-xl">
             {reading_time} min read
           </p>
-          <span className="text-2xl">
+          <button onClick={()=>handleBookMarks(blog)} className="text-2xl">
             <BiBookmark></BiBookmark>
-          </span>
+          </button>
         </div>
       </div>
       <h2 className="font-bold text-[40px] text-[#111111] mb-4">{title}</h2>
@@ -41,12 +41,14 @@ const Blog = ({ blog }) => {
         {
           hashtags.map((hash, idx)=> <p key={idx}># {hash}</p>)
         }</div>
-      <p className="mt-6 text-[#6047EC] text-xl font-semibold underline"><a href="#">Mark as read</a></p>
+      <button onClick={()=>handleReadingTimes(reading_time)} className="mt-6 text-[#6047EC] text-xl font-semibold underline">Mark as read</button>
     </div>
   );
 };
 
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handleBookMarks: PropTypes.func,
+  handleReadingTimes: PropTypes.func
 };
 export default Blog;

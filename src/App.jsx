@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="max-w-[1280px] m-auto mt-3">
       <Header></Header>
-      <div className="md:flex mt-4 items-center p-4 gap-2">
+      <div className="md:flex mt-4 items-start p-4 gap-6">
         <Blogs></Blogs>
         <ReadMark></ReadMark>
       </div>
